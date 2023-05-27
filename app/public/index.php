@@ -1,8 +1,8 @@
 <?php
 
-phpinfo();
-
 use App\Repository\TranslationRepository;
+
+xdebug_info();
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
