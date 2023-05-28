@@ -1,0 +1,13 @@
+{
+  "name": "docker-php",
+  "author": "jasonjrz",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "APP_ENV=development vite"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "vite-plugin-live-reload": "^3.0.2"
+  }
+}

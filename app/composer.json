@@ -3,11 +3,7 @@
   "description": "A Docker demo app for garyclarke.tech",
   "minimum-stability": "dev",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Jason Jerez"
-    }
-  ],
+  "author": "Jason Jerez",
   "require": {
     "php": "^8.0",
     "ext-pdo": "*",
