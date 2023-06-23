@@ -6,20 +6,20 @@ use App\Repository\TranslationRepository;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-$client = \Symfony\Component\Cache\Adapter\RedisAdapter::createConnection(
-  "redis://{$_ENV['REDIS_HOST']}:{$_ENV['REDIS_PORT']}"
-);
+// $client = \Symfony\Component\Cache\Adapter\RedisAdapter::createConnection(
+//   "redis://{$_ENV['REDIS_HOST']}:{$_ENV['REDIS_PORT']}"
+// );
 
-$cacheAdapter = new \Symfony\Component\Cache\Adapter\RedisAdapter($client);
+// $cacheAdapter = new \Symfony\Component\Cache\Adapter\RedisAdapter($client);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $translationCache = new \App\Cache\TranslationCache($cacheAdapter, new TranslationRepository());
-  $translation = $translationCache->findForLanguage($_POST['language'], $_POST['phrase']) ?: 'Translation not found...';
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//   $translationCache = new \App\Cache\TranslationCache($cacheAdapter, new TranslationRepository());
+//   $translation = $translationCache->findForLanguage($_POST['language'], $_POST['phrase']) ?: 'Translation not found...';
 
-} else {
-  $languageRepository = new \App\Repository\LanguageRepository();
-  $languages = $languageRepository->findAll();
-}
+// } else {
+//   $languageRepository = new \App\Repository\LanguageRepository();
+//   $languages = $languageRepository->findAll();
+// }
 ?>
 
 <!doctype html>
@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="d-grid gap-2">
               <button class="btn btn-outline-info" type="submit">Translate</button>
             </div>
+            <img src="./img3.png" alt="">
           </div>
         </form>
       <?php endif; ?>
@@ -127,9 +128,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </div>
 
-<script src="main.js"></script>
-<!-- <script>
-  console.log('Hello?')
-</script> -->
+<script src="js/bundle.js"></script>
 </body>
 </html>

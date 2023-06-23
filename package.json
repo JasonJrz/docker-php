@@ -2,12 +2,16 @@
   "name": "docker-php",
   "author": "jasonjrz",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "start": "APP_ENV=development vite"
+    "start": "node bin/dev/index.js",
+    "bundle": "rollup -c"
   },
   "devDependencies": {
-    "vite": "^4.3.9",
-    "vite-plugin-live-reload": "^3.0.2"
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "browser-sync": "^2.29.3",
+    "rollup": "^3.25.1"
   }
 }
